@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css" />
+
+
+    <title>Weather</title>
+</head>
+
+<body>
+    <main>
+        <div id="logoblock">
+            <img id="logo" src="4b8fa90b8cabcd4a0ec4f82122913da1.png">
+            <span>Weather App</span>
+        </div>
+    </main>
+
+    <section>
+        <% for(let post of data){ %>
+        <form id='formsub' action="/data" method="post" onclick="send(`<%= post %>`)">
+            <div id=<%=`square${post}`%> class="data">
+                <span>
+                    <div class="city">
+                        <p id=<%=`cityname${post}`%>>C:</p>
+                        <p><span>ID:</span><span id=<%=`cityid${post}`%>></span></p>
+                        <p id=<%=`time${post}`%>>T:</p>
+                    </div>
+                    <div class="sky">
+                        <span id=<%=`wetherstate${post}`%>>S:</span>
+                    </div>
+                </span>
+                <span>
+                    <span id=<%=`temp${post}`%>>TE:</span>
+                    <span>&#8451;</span>
+                </span>
+            </div>
+        </form>
+        <% } %>
+    </section>
+
+    <footer>
+        <span>2021 Fidenz Technologies</span>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/redirectstyles.css" rel="stylesheet" type="text/css">
+    <title>Specs</title>
+</head>
+
+<body>
+
+
+    <% let clr = null %>
+    <% if(reqBodyData.bkclr === 'blueclr'){%>
+    <% clr = '#388ee7' %>
+    <% }else if(reqBodyData.bkclr === 'purpleclr') {%>
+    <% clr='#6249cc' %>
+    <% }else if(reqBodyData.bkclr === 'greenclr') { %>
+    <% clr='#40b681' %>
+    <% }else if(reqBodyData.bkclr === 'orangeclr') { %>
+    <% clr='#de944e' %>
+    <% }else if(reqBodyData.bkclr === 'redclr') { %>
+    <% clr='#9c3a3a' %>
+    <% } %>
+
+    <main>
+        <div id="logoblock">
+            <img src="/4b8fa90b8cabcd4a0ec4f82122913da1.png" id="logo">
+            <span>Weather App</span>
+        </div>
+    </main>
+
+    <div class="data" style=<%=`background-color:${clr}`%>>
+        <div class="backbtn">
+            <a href="http://localhost:8080/">
+                <div>
+                    <span id="butt"><b>&#60;</b></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="con1">
+            <p id="city"><%= reqBodyData.city %></p>
+            <p id="time"><%= reqBodyData.time %></p>
+        </div>
+
+
+        <div class="con2">
+            <span id="status"><%= reqBodyData.wetherState %></span>
+            <span>&nbsp|</span>
+            <span id="temp">&nbsp<%= reqBodyData.temp %></span>
+            <span>&#8451;</span>
+        </div>
+    </div>
+
+
+    <footer>
+        <span>2021 Fidenz Technologies</span>
+    </footer>
+
+    <script src="/redirectapp.js"></script>
+    
+</body>
+</html>
